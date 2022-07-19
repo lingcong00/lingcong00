@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis</title>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+<style type="text/less">
+    * {
+        box-shadow: 0 0 1px red;
+    }
+    @media (max-width:300px){
+        section{
+            flex-flow:column;
+        }
+    }
+    section {
+        display:flex;
+        height:500px;
+        div:nth-child(1){
+            flex-basis: 70%;
+        }
+        div:nth-child(2){
+            flex:30%;
+        }
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+
+</html>

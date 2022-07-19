@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块级元素垂直居中</title>
+    <style>
+        * {
+            background-color: rgba(0, 0, 0, .1);
+            box-shadow: 0 0 1px red;
+        }
+
+        h1 {
+            font-size: 0;
+            height: 400px;
+            line-height: 400px;
+        }
+
+        span {
+            display: inline-block;
+            line-height: normal;
+            font-size: 24px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius odio facilis doloremque officiis voluptate
+            harum quidem inventore, asperiores enim, vero error, quibusdam optio nostrum. Eius expedita quibusdam et
+            modi doloremque.
+        </span>
+    </h1>
+</body>
+
+</html>

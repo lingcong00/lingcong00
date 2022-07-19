@@ -1,0 +1,199 @@
+<script>
+  // 冒泡排序
+  function bubbleSort(ary) {
+    for (let i = ary.length - 2; i >= 0; i--) {
+      let swapped = false
+
+      for (let j = 0; j <= i; j++) {
+        if (ary[j] > ary[j + 1]) {
+          let t = ary[j]
+          ary[j] = ary[j + 1]
+          ary[j + 1] = t
+          swapped = true
+        }
+      }
+
+      if (swapped == false) {
+        break
+      }
+    }
+
+    return ary
+  }
+
+  // 插入排序
+  function insertSort(ary) {
+    for (let i = 1; i < ary.length; i++) {
+      for (let j = i; j >= 1; j--) {
+        if (ary[j] < ary[j - 1]) {
+          let t = ary[j]
+          ary[j] = ary[j - 1]
+          ary[j - 1] = t
+        } else {
+          break
+        }
+      }
+    }
+
+    return ary
+  }
+
+  // 归并排序（将数组一分为二，各自排序，之后合并起来）
+  function mergeSort(ary) {
+    if (ary.length == 0 || ary.length == 1) {
+      return [...ary]
+    }
+
+    let mid = ary.length >> 1
+    let leftAry = ary.slice(0, mid)
+    let rightAry = ary.slice(mid)
+    let leftSorted = mergeSort(leftAry)
+    let rightSorted = mergeSort(rightAry)
+    let result = []
+    let i = 0, j = 0
+
+    while (i < leftSorted.length && j < rightSorted.length) {
+      if (leftSorted[i] < rightSorted[j]) {
+        result.push(leftSorted[i++])
+      } else {
+        result.push(rightSorted[j++])
+      }
+    }
+
+    while (i < leftSorted.length) {
+      result.push(leftSorted[i++])
+    }
+    while (j < rightSorted.length) {
+      result.push(rightSorted[j++])
+    }
+
+    return result
+  }
+
+  // 选择排序（每轮选择无序范围内最小的元素放入有序范围的最后）
+  function selecSort(ary) {
+    for (let i = 0; i < ary.length - 1; i++) {
+      for (let j = i; j < ary.length; j++) {
+        if (ary[j] < ary[i]) {
+          let t = ary[j]
+          ary[j] = ary[i]
+          ary[i] = t
+        }
+      }
+    }
+
+    return ary
+  }
+
+  // 快速排序（随机选择数组中的一个数字，将数组分为三部分：小于该数的，等于该数的，大于该数的。然后对于小于该数的部分和大于该数的部分进行递归排序，然后拼接）
+  function quickSort(ary) {
+    if (ary.length < 2) {
+      return [...ary]
+    }
+
+    let pivotIdx = Math.floor(Math.random() * ary.length)
+    let pivot = ary[pivotIdx]
+    let left = []
+    let middle = []
+    let right = []
+
+    for (let i = 0; i < ary.length; i++) {
+      if (ary[i] < pivot) {
+        left.push(ary[i])
+      }
+      if (ary[i] == pivot) {
+        middle.push(ary[i])
+      }
+      if (ary[i] > pivot) {
+        right.push(ary[i])
+      }
+    }
+
+    left = quickSort(left)
+    right = quickSort(right)
+
+    return left.concat(middle, right)
+  }
+
+  // 对数组的 left 和 right 之间（包含）的数进行快速排序（原地排，不返回新数组）
+  // 存在的问题：对于所有元素都相同的数组会导致递归爆栈
+  function quickSort2(ary, left = 0, right = ary.length - 1) {
+    if (right - left < 1) {
+      return ary
+    }
+
+    // 把哨兵放到数组最后
+    let pivotIdx = Math.floor(Math.random() * (right - left + 1) + left)
+    let pivot = ary[pivotIdx]
+
+    let t = ary[pivotIdx]
+    ary[pivotIdx] = ary[right]
+    ary[right] = t
+
+    // 只要有小于哨兵元素的 i 就++，然后把 j 和 i 的位置互换，相当于把小于哨兵的元素填到前面去，然后再把哨兵放到 i++ 位置上，右边就是小于哨兵的，左边就是大于哨兵的，再使用递归就行了
+    let i = left - 1
+    for (let j = left; j < right; j++) {
+      if (ary[j] < pivot) {
+        i++
+        let t = ary[j]
+        ary[j] = ary[i]
+        ary[i] = t
+      }
+    }
+    i++
+    let t1 = ary[right]
+    ary[right] = ary[i]
+    ary[i] = t
+
+    quickSort2(ary, left, i - 1)
+    quickSort2(ary, i + 1, right)
+
+    return ary
+  }
+
+  function quickSort3(ary, left = 0, right = ary.length - 1) {
+    if (right - left < 1) {
+      return ary
+    }
+
+    let pivotIdx = Math.floor(Math.random() * (right - left + 1) + left)
+    let pivot = ary[pivotIdx]
+
+    let t = ary[pivotIdx]
+    ary[pivotIdx] = ary[right]
+    ary[right] = t
+
+    // i 记录小于哨兵的元素，k 记录等于哨兵的元素，j 遍历数组
+    let i = left - 1
+    let k = i
+    for (let j = left; j < right; j++) {
+      if (ary[j] == pivot) {
+        k++
+        let t1 = ary[k]
+        ary[k] = ary[j]
+        ary[j] = t1
+      } else if (ary[i] < pivot) {
+        i++
+        k++
+        let t2 = ary[i]
+        ary[i] = ary[j]
+        ary[j] = t2
+        if (k !== i) {  // 如果已经有了等于哨兵的元素，i 就会把 k 位置上的元素换到 j上，需要把 j 上等于哨兵的换回 k 上
+          let t3 = ary[k]
+          ary[k] = ary[j]
+          ary[j] = t3
+        }
+      }
+    }
+
+    k++
+    let t4 = ary[k]
+    ary[k] = ary[j]
+    ary[j] = t4
+
+    quickSort3(ary, left, i)
+    quickSort3(ary, k + 1, right)
+
+    return ary
+  }
+</script>

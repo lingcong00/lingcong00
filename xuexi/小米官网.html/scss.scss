@@ -1,0 +1,882 @@
+html {
+    box-sizing: border-box;
+    height: 10000px;
+}
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+// 字体图标
+@font-face {
+    font-family: "iconfont"; /* Project id 2875263 */
+    src: url("//at.alicdn.com/t/font_2875263_pa6dvuggx4b.woff2?t=1648199878636") format("woff2"),
+        url("//at.alicdn.com/t/font_2875263_pa6dvuggx4b.woff?t=1648199878636") format("woff"),
+        url("//at.alicdn.com/t/font_2875263_pa6dvuggx4b.ttf?t=1648199878636") format("truetype");
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei,
+        sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    width: 1226px;
+    margin: 0 auto;
+}
+// 闭合浮动
+.clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+// 头部导航栏部分
+// 设置z-index时先看父元素的，子元素在高也没用
+.header {
+    .site-topbar {
+        height: 40px;
+        line-height: 40px;
+        background-color: #333;
+        a {
+            color: #b0b0b0;
+            &:hover {
+                color: #fff;
+            }
+        }
+        li {
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .topbar-nav {
+            float: left;
+            font-size: 0;
+            li:nth-child(even) {
+                height: 12px;
+                vertical-align: -2px;
+                margin: 0 0.6em;
+                border-right: 2px solid #424242;
+            }
+            li:nth-last-child(3) {
+                position: relative;
+                text-align: center;
+                a {
+                    color: #fff;
+                }
+                span {
+                    display: block;
+                    position: absolute;
+                    z-index: 10004;
+                    top: 40px;
+                    left: -40px;
+                    font-size: 14px;
+                    color: #333;
+                    background-color: #fff;
+                    box-shadow: 0 1px 5px #aaa;
+                    overflow: hidden;
+                    height: 0;
+                    transition: height 0.3s;
+                    img {
+                        display: block;
+                        margin: 18px 18px 0px;
+                    }
+                }
+                &::before {
+                    content: "";
+                    border: 9px solid black;
+                    border-color: transparent transparent #fff transparent;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translatex(-50%);
+                    display: none;
+                }
+                &:hover {
+                    span {
+                        height: 148px;
+                    }
+                    &::before {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .topbar-car {
+            position: relative;
+            z-index: 10003;
+            float: right;
+            width: 120px;
+            margin-left: 25px;
+            color: #b0b0b0;
+            background-color: #424242;
+            text-align: center;
+            transition: all 0.3s 0.6s;
+            i {
+                font-size: 22px;
+                line-height: 1;
+                vertical-align: -2px;
+                transition: all 0.3s 0.6s;
+            }
+            span {
+                font-size: 12px;
+                line-height: 1;
+                transition: all 0.3s 0.6s;
+            }
+            &:hover {
+                background-color: #fff;
+                transition: 0.3s;
+                i,
+                span {
+                    color: #ff6a00;
+                    transition: 0.3s;
+                }
+                .car-content {
+                    height: 100px;
+                    transition: 0.3s;
+                }
+            }
+        }
+        .car-content {
+            position: absolute;
+            z-index: 200;
+            right: 0;
+            top: 100%;
+            width: 316px;
+            font-size: 12px;
+            line-height: 100px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s 0.6s;
+        }
+        .topbar-info {
+            float: right;
+            li:nth-child(even) {
+                height: 12px;
+                vertical-align: -2px;
+                margin: 0 0.6em;
+                border-right: 2px solid #424242;
+            }
+        }
+    }
+    .site-header {
+        height: 100px;
+        position: relative;
+        .header-logo {
+            float: left;
+            height: 100px;
+            a {
+                position: relative;
+                display: block;
+                overflow: hidden;
+                text-indent: -9999px;
+                height: 56px;
+                width: 56px;
+                top: 50%;
+                transform: translatey(-50%);
+                &:hover {
+                    &::before {
+                        left: 0;
+                    }
+                    &::after {
+                        left: 100%;
+                    }
+                }
+            }
+            a::before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 56px;
+                width: 56px;
+                left: -100%;
+                background: url(//s02.mifile.cn/assets/static/image/logo-mi2.png) center/56px no-repeat;
+                transition: 0.3s;
+            }
+            a::after {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 56px;
+                width: 56px;
+                left: 0;
+                background: url(//s02.mifile.cn/assets/static/image/logo-mi2.png) center/56px no-repeat;
+                transition: 0.3s;
+            }
+        }
+        .nav-list-last {
+            float: left;
+            height: 100px;
+            line-height: 100px;
+            font-size: 16px;
+            li {
+                float: left;
+                margin: 0 10px;
+                a {
+                    display: inline-block;
+                    height: 100%;
+                    color: #333;
+                    &:hover {
+                        color: #ff6a00;
+                    }
+                }
+            }
+        }
+        // 先设置hover ul时全部显示出来，然后再根据hover那个z-index更高且transition时间为0，离开时设置变化的时间长点，z-index设置特别大可以延长离开时变回来的时间
+        .nav-list {
+            float: left;
+            height: 100px;
+            line-height: 100px;
+            font-size: 16px;
+            margin-left: 180px;
+            &:hover {
+                ul {
+                    height: 230px;
+                }
+            }
+            li {
+                float: left;
+                margin: 0 10px;
+                a {
+                    display: inline-block;
+                    height: 100%;
+                    color: #333;
+                    &:hover {
+                        color: #ff6a00;
+                        + ul {
+                            transition: z-index 0s, height 0.3s;
+                            z-index: 10000;
+                        }
+                    }
+                }
+                ul {
+                    position: absolute;
+                    z-index: 1;
+                    left: 0;
+                    width: 100%;
+                    padding: 0 calc(50% - 1226px / 2);
+                    background-color: #fff;
+                    box-shadow: 0 2px 6px rgb(0 0 0 / 2%);
+                    height: 0;
+                    overflow: hidden;
+                    transition: z-index 10s, height 0.3s;
+                    &:hover {
+                        color: #ff6a00;
+                        transition: z-index 0s, height 0.3s;
+                        z-index: 10000;
+                    }
+                    // 伪元素生成类似边框的线，父元素盒子小的话，可以定位到其他元素上去，这样可以做到全屏而不受父元素宽度影响
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        height: 1px;
+                        width: 100%;
+                        background-image: linear-gradient(to right, #e0e0e0, #e0e0e0 100%);
+                        background-size: 100% 1px;
+                    }
+                }
+                li {
+                    height: 201px;
+                    width: 204px;
+                    line-height: normal;
+                    text-align: center;
+                    font-size: 12px;
+                    margin: 0;
+                    padding: 35px 12px 0;
+                    img {
+                        margin-bottom: 13px;
+                        border-right: 1px solid #e0e0e0;
+                    }
+                    &:last-child img {
+                        border-right: none;
+                    }
+                    span {
+                        display: block;
+                        margin: 3px 0;
+                    }
+                    span:last-child {
+                        color: #ff6a00;
+                    }
+                }
+            }
+        }
+    }
+    .header-search {
+        height: 50px;
+        width: 297px;
+        float: right;
+        position: relative;
+        font-size: 0;
+        margin: 25px 0;
+        input {
+            height: 50px;
+            width: 245px;
+            font-size: 14px;
+            text-indent: 0.5em;
+            border: 1px solid #e0e0e0;
+            border-right: none;
+            outline: none;
+            transition: 0.3s;
+            &:focus {
+                border-color: #ff6a00 !important;
+                + button {
+                    border-color: #ff6a00 !important;
+                }
+                ~ .search-content {
+                    display: block;
+                }
+            }
+            &:hover {
+                border-color: #b0b0b0;
+                + button {
+                    border-color: #b0b0b0;
+                }
+            }
+        }
+        button {
+            height: 50px;
+            width: 52px;
+            font-size: 18px;
+            vertical-align: bottom;
+            border: 1px solid #e0e0e0;
+            background-color: #fff;
+            transition: 0.3s;
+            &:hover {
+                background-color: #ff6a00;
+                color: white;
+                border-color: #ff6a00;
+            }
+        }
+    }
+    .search-content {
+        display: none;
+        position: absolute;
+        z-index: 10002;
+        top: 100%;
+        left: 0;
+        height: 241px;
+        width: 246px;
+        background-color: #fff;
+        border: 1px solid #ff6a00;
+        border-top: none;
+        ul {
+            height: 100%;
+            width: 100%;
+            font-size: 12px;
+            line-height: 30px;
+            text-indent: 1em;
+            display: flex;
+            flex-flow: column;
+            li {
+                flex: 1;
+                &:hover {
+                    background-color: #fafafa;
+                }
+            }
+        }
+    }
+}
+.home-hero-container {
+    position: relative;
+    width: 1226px;
+    margin-bottom: 26px;
+}
+.nav {
+    position: absolute;
+    z-index: 1000;
+    width: 234px;
+    height: 460px;
+    padding: 20px 0;
+    background: rgba(105, 101, 101, 0.6);
+    .nav-aside {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        > li {
+            flex: 1;
+            line-height: 42px;
+            > a {
+                position: relative;
+                display: block;
+                padding: 0 0 0 30px;
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                color: #fff;
+                &::after {
+                    content: "\e65f";
+                    position: absolute;
+                    right: 20px;
+                    font-family: "iconfont";
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #fff;
+                }
+                &:hover {
+                    background-color: #ff6a00;
+                    + ul {
+                        display: flex;
+                        li {
+                            display: flex;
+                            z-index: 100;
+                        }
+                    }
+                }
+            }
+        }
+        ul {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            display: none;
+            text-align: left;
+            height: 100%;
+            width: 993px; //没有找到让宽度自适应的方法，先全部给定宽度
+            box-shadow: 0 8px 16px rgb(0 0 0 / 18%);
+            background-color: #fff;
+            flex-flow: column wrap;
+            align-content: flex-start;
+            &:hover {
+                display: flex;
+                li {
+                    display: block;
+                    z-index: 100;
+                }
+            }
+            li {
+                flex: 1;
+                display: none;
+            }
+            a {
+                display: block;
+                height: 76px;
+                width: 248px;
+                padding: 18px 20px;
+                background-color: #fff;
+                &:hover {
+                    span {
+                        color: #ff6a00;
+                    }
+                }
+                span {
+                    display: inline-block;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    vertical-align: top;
+                    padding-left: 10px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+.slider {
+    position: relative;
+    height: 460px;
+    input {
+        display: none;
+    }
+    li {
+        opacity: 0;
+        transition: 0.6s;
+        label {
+            display: block;
+            position: absolute;
+            font-size: 35px;
+            color: #e0e0e0;
+            height: 69px;
+            width: 41px;
+            line-height: 69px;
+            text-align: center;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 20;
+            &:hover {
+                background-color: #7c7c7c;
+            }
+        }
+        label:nth-of-type(1) {
+            left: 234px;
+        }
+        label:nth-of-type(2) {
+            right: 0;
+        }
+    }
+    img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    div {
+        display: inline-block;
+        position: absolute;
+        right: 32px;
+        bottom: 20px;
+        label {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            margin: 0 3px;
+            border: 2px solid #fff;
+            border-color: hsla(0, 0%, 100%, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 50%;
+        }
+    }
+}
+@for $i from 1 through 4 {
+    .slider input:nth-of-type(#{$i}):checked ~ ul > li:nth-of-type(#{$i}) {
+        opacity: 1;
+        z-index: 10;
+    }
+}
+@for $i from 1 through 4 {
+    .slider input:nth-of-type(#{$i}):checked ~ div > label:nth-of-type(#{$i}) {
+        background: hsla(0, 0%, 100%, 0.4);
+        border-color: rgba(0, 0, 0, 0.4);
+    }
+}
+.home-hero-sub {
+    height: 170px;
+    margin-top: 14px;
+    .home-channel-list {
+        float: left;
+        height: 100%;
+        width: 234px;
+        overflow: hidden;
+        background-color: #fafafa;
+        ul {
+            display: flex;
+            flex-flow: wrap;
+            li {
+                position: relative;
+                width: 78px;
+                height: 85px;
+                text-align: center;
+                background: #5f5750;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background: #665e57;
+                    top: -1px;
+                    left: 6px;
+                    width: 64px;
+                    height: 1px;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    background: #665e57;
+                    top: 6px;
+                    left: 0;
+                    width: 1px;
+                    height: 70px;
+                }
+                a {
+                    display: inline-block;
+                    width: 70px;
+                    height: 64px;
+                    padding: 18px 0 0;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #fff;
+                    opacity: 0.7;
+                    transition: opacity 0.2s;
+                    &:hover {
+                        opacity: 1;
+                    }
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        margin: 0 23px 4px;
+                    }
+                }
+            }
+        }
+    }
+    .home-promo-list {
+        display: flex;
+        justify-content: space-between;
+        float: right;
+        height: 100%;
+        width: 978px;
+        a {
+            display: block;
+            float: left;
+            width: 316px;
+            height: 100%;
+            transition: 0.6s;
+            &:hover {
+                box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.home-main {
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+.home-banner-box {
+    height: 120px;
+    margin: 22px 0;
+}
+.home-brick-box {
+    position: relative;
+    height: 58px;
+    h2 {
+        float: left;
+        font-size: 22px;
+        font-weight: 200;
+        line-height: 58px;
+        margin: 0;
+        color: #333;
+    }
+    //more
+    //这里有两个行内元素，给行高让元素居中的话，其行框由于两个元素基线不一样，导致行框高不一定等于行高，从而影响后面布局
+    .more {
+        float: right;
+        font-size: 16px;
+        margin-top: 10px;
+        a {
+            font-size: initial;
+            color: #333;
+            transition: 0.4s;
+            &:hover {
+                color: #ff6a00;
+                i {
+                    background-color: #ff6a00;
+                }
+            }
+        }
+        i {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            padding: 4px;
+            font-size: 12px;
+            color: #fff;
+            vertical-align: 2px;
+            background: #b0b0b0;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+    }
+    //tab-list  利用hover没有transition，原来元素的transition延迟很长的时间
+    .tab-list {
+        float: right;
+        margin-left: -15px;
+        &:hover {
+            > li div {
+                visibility: hidden;
+                transition: none;
+            }
+        }
+        > li {
+            float: left;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            div {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                visibility: hidden;
+                transition: 0s 999999s;
+            }
+            &:hover {
+                color: #ff6a00;
+                text-decoration: underline;
+                div {
+                    visibility: visible;
+                    z-index: 100;
+                    transition: none;
+                }
+            }
+        }
+    }
+}
+//flex布局
+.box-hd {
+    height: 614px;
+    margin-bottom: 22px;
+    > ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        width: 1226px;
+        height: 614px;
+        li {
+            width: 234px;
+            height: 300px;
+            text-align: center;
+            background-color: #fff;
+            transition: all 0.2s linear;
+            &:hover {
+                box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+                transform: translate3d(0, -2px, 0);
+            }
+            a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                padding: 20px 0;
+            }
+            img {
+                width: 160px;
+                height: 160px;
+            }
+            h3 {
+                font-size: 14px;
+                font-weight: 400;
+                color: #333;
+                margin-bottom: 2px;
+            }
+            p {
+                font-size: 12px;
+                color: #b0b0b0;
+                margin: 0 10px 10px;
+            }
+            span {
+                font-size: 14px;
+                color: #ff6a00;
+            }
+        }
+        li:first-child {
+            width: 234px;
+            height: 614px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        li:nth-child(9):nth-last-child(2) {
+            height: 143px;
+            a {
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-content: center;
+                align-items: flex-start;
+            }
+            img {
+                order: 1;
+                height: 80px;
+                width: 80px;
+            }
+            h3 {
+                font-size: 14px;
+                color: #333;
+                height: 42px;
+                width: 94px;
+                text-align: left;
+            }
+            p {
+                font-size: 12px;
+                color: #ff6a00;
+                margin: 0;
+            }
+            ~ li {
+                height: 143px;
+                .tab-list-more {
+                    display: inline-block;
+                    margin-top: 10px;
+                    margin-left: -10px;
+                    padding-right: 50px;
+                    h3 {
+                        font-size: 18px;
+                    }
+                    p {
+                        text-align: left;
+                        margin-left: 0;
+                    }
+                }
+                i {
+                    font-size: 48px;
+                    color: #ff6a00;
+                    margin-left: -10px;
+                }
+            }
+        }
+    }
+}
+//浮动布局
+.box-hd-float {
+    height: 614px;
+    width: 1226px;
+    margin-bottom: 26px;
+}
+.box-hd-left {
+    float: left;
+    height: 614px;
+    width: 234px;
+    background-color: #665e57;
+}
+.box-hd-right {
+    float: right;
+    width: 992px;
+    font-size: 0;
+    li {
+        display: inline-block;
+        width: 234px;
+        height: 300px;
+        margin-left: 14px;
+        background-color: #ff6a00;
+    }
+    li:nth-child(-n + 4) {
+        margin-bottom: 14px;
+    }
+}
+// 常规流布局
+.box-hd-block {
+    height: 614px;
+    width: 1226px;
+    margin-bottom: 26px;
+    background-color: #7c7c7c;
+    ul {
+        font-size: 0;
+        margin-right: -14px;
+    }
+    li {
+        display: inline-block;
+        width: 234px;
+        height: 300px;
+        margin-right: 14px;
+        background-color: #ff6a00;
+    }
+    li:nth-child(-n + 5) {
+        margin-bottom: 14px;
+    }
+}

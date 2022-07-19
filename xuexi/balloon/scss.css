@@ -1,0 +1,161 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+[aria-label] {
+  display: block;
+  position: relative;
+  width: 100px;
+  margin: 50px auto;
+  padding: 5px;
+  background-color: #b71212;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+[aria-label]::before {
+  content: attr(aria-label);
+  position: absolute;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: 0.6s;
+  pointer-events: none;
+}
+[aria-label]::after {
+  content: "";
+  position: absolute;
+  border: 4px solid black;
+  opacity: 0;
+  transition: 0.6s;
+  pointer-events: none;
+}
+[aria-label]:hover::before, [aria-label]:hover::after {
+  opacity: 1;
+}
+
+[aria-label]:not([data-balloon-pos])::before,
+[aria-label][data-balloon-pos=up]::before {
+  left: 50%;
+  transform: translatex(-50%) translateY(10px);
+  bottom: calc(100% + 10px);
+}
+[aria-label]:not([data-balloon-pos])::after,
+[aria-label][data-balloon-pos=up]::after {
+  left: 50%;
+  transform: translatex(-50%) translateY(10px);
+  top: -10px;
+  border-color: black transparent transparent transparent;
+}
+[aria-label]:not([data-balloon-pos]):hover::before, [aria-label]:not([data-balloon-pos]):hover::after,
+[aria-label][data-balloon-pos=up]:hover::before,
+[aria-label][data-balloon-pos=up]:hover::after {
+  transform: translatex(-50%);
+}
+
+[aria-label][data-balloon-pos=down]::before {
+  left: 50%;
+  transform: translatex(-50%) translateY(10px);
+  bottom: calc(-100% - 10px);
+}
+[aria-label][data-balloon-pos=down]::after {
+  left: 50%;
+  transform: translatex(-50%) translateY(10px);
+  bottom: -10px;
+  border-color: transparent transparent black transparent;
+}
+[aria-label][data-balloon-pos=down]:hover::before, [aria-label][data-balloon-pos=down]:hover::after {
+  transform: translatex(-50%);
+}
+
+[aria-label][data-balloon-pos=left]::before {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translate(0, -50%) translatex(12px);
+}
+[aria-label][data-balloon-pos=left]::after {
+  left: -10px;
+  top: 50%;
+  transform: translate(0, -50%) translatex(12px);
+  border-color: transparent transparent transparent black;
+}
+[aria-label][data-balloon-pos=left]:hover::before, [aria-label][data-balloon-pos=left]:hover::after {
+  transform: translate(0, -50%);
+}
+
+[aria-label][data-balloon-pos=right]::before {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translate(0, -50%) translatex(-12px);
+}
+[aria-label][data-balloon-pos=right]::after {
+  right: -10px;
+  top: 50%;
+  transform: translate(0, -50%) translatex(-12px);
+  border-color: transparent black transparent transparent;
+}
+[aria-label][data-balloon-pos=right]:hover::before, [aria-label][data-balloon-pos=right]:hover::after {
+  transform: translate(0, -50%);
+}
+
+[data-balloon-blunt]::before, [data-balloon-blunt]::after {
+  transition: none !important;
+}
+
+[data-balloon-length=small]::before {
+  white-space: normal;
+  width: 80px;
+}
+
+[data-balloon-length=medium]::before {
+  white-space: normal;
+  width: 150px;
+}
+
+[data-balloon-length=large]::before {
+  white-space: normal;
+  width: 260px;
+}
+
+[data-balloon-length=xlarge]::before {
+  white-space: normal;
+  width: 480px;
+}
+
+[data-balloon-length=fit]::before {
+  white-space: normal;
+  width: 100%;
+}
+
+[data-balloon-visible]::after, [data-balloon-visible]::before {
+  opacity: 1;
+  transition: none;
+}
+[data-balloon-visible][aria-label]:not([data-balloon-pos])::before, [data-balloon-visible][aria-label]:not([data-balloon-pos])::after, [data-balloon-visible][aria-label][data-balloon-pos=up]::before, [data-balloon-visible][aria-label][data-balloon-pos=up]::after {
+  transform: translatex(-50%);
+}
+[data-balloon-visible][aria-label][data-balloon-pos=down]::before, [data-balloon-visible][aria-label][data-balloon-pos=down]::after {
+  transform: translatex(-50%);
+}
+[data-balloon-visible][aria-label][data-balloon-pos=left]::before, [data-balloon-visible][aria-label][data-balloon-pos=left]::after {
+  transform: translate(0, -50%);
+}
+[data-balloon-visible][aria-label][data-balloon-pos=right]::before, [data-balloon-visible][aria-label][data-balloon-pos=right]::after {
+  transform: translate(0, -50%);
+}
+
+.tooltip-red::before {
+  background-color: red;
+}
+.tooltip-red::after {
+  border-color: red transparent transparent transparent !important;
+}/*# sourceMappingURL=scss.css.map */

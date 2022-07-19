@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap</title>
+</head>
+<!-- 可用类名table table-dark table-hover table-sm table-striped table-border table-borderless -->
+
+<body>
+    <table class="table table-dark table-hover table-sm table-striped table-border table-borderless">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>Larry</td>
+                <td>Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+    <style>
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table td,
+        .table th {
+            padding: 12px;
+        }
+
+        .table th {
+            text-align: left;
+        }
+
+        .table thead tr {
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table tbody tr {
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table-dark {
+            background-color: #343a40;
+            color: white;
+        }
+
+        .table-dark thead tr {
+            border-color: #454d55;
+        }
+
+        .table-dark tbody tr {
+            border-color: #454d55;
+        }
+
+        .table-sm td,
+        .table th {
+            padding: 5px;
+        }
+
+        .table-striped tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        .table-striped.table-dark tbody tr:nth-child(odd) {
+            background-color: #3e444a;
+        }
+
+        .table-hover.table-dark tbody tr:hover {
+            background-color: #43494e;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #ececec;
+        }
+
+        .table-border td,
+        .table-border th {
+            border: 1px solid #dee2e6;
+        }
+
+        .table-border.table-dark td,
+        .table-border.table-dark th {
+            border-color: #454d55;
+        }
+
+
+        .table-borderless thead tr,
+        .table-borderless tbody tr,
+        .table-borderless td,
+        .table-borderless th {
+            border: none;
+        }
+
+        .table-border.table-borderless {
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</body>
+
+</html>

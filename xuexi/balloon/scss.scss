@@ -1,0 +1,203 @@
+html {
+    box-sizing: border-box;
+}
+*,
+::after,
+::before {
+    box-sizing: inherit;
+}
+[aria-label] {
+    display: block;
+    position: relative;
+    width: 100px;
+    margin: 50px auto;
+    padding: 5px;
+    background-color: rgb(183, 18, 18);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    &::before {
+        content: attr(aria-label);
+        position: absolute;
+        background-color: black;
+        color: white;
+        border-radius: 3px;
+        padding: 5px;
+        white-space: nowrap;
+        opacity: 0;
+        transition: 0.6s;
+        pointer-events: none;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        border: 4px solid black;
+        opacity: 0;
+        transition: 0.6s;
+        pointer-events: none;
+    }
+    &:hover {
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+// data-balloon-pos默认样式鼠标经过气泡缓动
+[aria-label]:not([data-balloon-pos]),
+[aria-label][data-balloon-pos="up"] {
+    &::before {
+        left: 50%;
+        transform: translatex(-50%) translateY(10px);
+        bottom: calc(100% + 10px);
+    }
+    &::after {
+        left: 50%;
+        transform: translatex(-50%) translateY(10px);
+        top: -10px;
+        border-color: black transparent transparent transparent;
+    }
+    &:hover {
+        &::before,
+        &::after {
+            transform: translatex(-50%);
+        }
+    }
+}
+[aria-label][data-balloon-pos="down"] {
+    &::before {
+        left: 50%;
+        transform: translatex(-50%) translateY(10px);
+        bottom: calc(-100% - 10px);
+    }
+    &::after {
+        left: 50%;
+        transform: translatex(-50%) translateY(10px);
+        bottom: -10px;
+        border-color: transparent transparent black transparent;
+    }
+    &:hover {
+        &::before,
+        &::after {
+            transform: translatex(-50%);
+        }
+    }
+}
+[aria-label][data-balloon-pos="left"] {
+    &::before {
+        right: calc(100% + 10px);
+        top: 50%;
+        transform: translate(0, -50%) translatex(12px);
+    }
+    &::after {
+        left: -10px;
+        top: 50%;
+        transform: translate(0, -50%) translatex(12px);
+        border-color: transparent transparent transparent black;
+    }
+    &:hover {
+        &::before,
+        &::after {
+            transform: translate(0, -50%);
+        }
+    }
+}
+[aria-label][data-balloon-pos="right"] {
+    &::before {
+        left: calc(100% + 10px);
+        top: 50%;
+        transform: translate(0, -50%) translatex(-12px);
+    }
+    &::after {
+        right: -10px;
+        top: 50%;
+        transform: translate(0, -50%) translatex(-12px);
+        border-color: transparent black transparent transparent;
+    }
+    &:hover {
+        &::before,
+        &::after {
+            transform: translate(0, -50%);
+        }
+    }
+}
+// data-balloon-blunt无动画
+[data-balloon-blunt] {
+    &::before,
+    &::after {
+        transition: none !important;
+    }
+}
+// data-balloon-length气泡大小
+[data-balloon-length="small"] {
+    &::before {
+        white-space: normal;
+        width: 80px;
+    }
+}
+[data-balloon-length="medium"] {
+    &::before {
+        white-space: normal;
+        width: 150px;
+    }
+}
+[data-balloon-length="large"] {
+    &::before {
+        white-space: normal;
+        width: 260px;
+    }
+}
+[data-balloon-length="xlarge"] {
+    &::before {
+        white-space: normal;
+        width: 480px;
+    }
+}
+[data-balloon-length="fit"] {
+    &::before {
+        white-space: normal;
+        width: 100%;
+    }
+}
+// data-balloon-visible气泡始终显示
+[data-balloon-visible] {
+    &::after,
+    &::before {
+        opacity: 1;
+        transition: none;
+    }
+    &[aria-label]:not([data-balloon-pos]),
+    &[aria-label][data-balloon-pos="up"] {
+        &::before,
+        &::after {
+            transform: translatex(-50%);
+        }
+    }
+    &[aria-label][data-balloon-pos="down"] {
+        &::before,
+        &::after {
+            transform: translatex(-50%);
+        }
+    }
+    &[aria-label][data-balloon-pos="left"] {
+        &::before,
+        &::after {
+            transform: translate(0, -50%);
+        }
+    }
+    &[aria-label][data-balloon-pos="right"] {
+        &::before,
+        &::after {
+            transform: translate(0, -50%);
+        }
+    }
+}
+// .tooltip-red改变气泡颜色
+.tooltip-red {
+    &::before {
+        background-color: red;
+    }
+    &::after {
+        border-color: red transparent transparent transparent !important;
+    }
+}

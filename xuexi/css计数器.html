@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <h2>Lorem, ipsum dolor.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <h2>Lorem, ipsum dolor.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+    <h2>Lorem, ipsum.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus unde recusandae suscipit at ad iusto aut
+        tempora libero doloribus? Nobis quo consectetur a, necessitatibus voluptatem quas suscipit rerum non voluptate?
+    </p>
+</body>
+<style>
+    h1::before {
+        content: "《";
+    }
+
+    h1::after {
+        content: "》";
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        counter-increment: chapter;
+        counter-reset: paragh;
+    }
+
+    h2::before {
+        content: "第"counter(chapter) "回  ";
+    }
+
+    p {
+        text-indent: 2em;
+        counter-increment: paragh;
+    }
+
+    p::before {
+        content: counter(paragh) ". ";
+    }
+</style>
+
+</html>

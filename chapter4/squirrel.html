@@ -1,0 +1,96 @@
+<script src="jacques_journal.js"></script>
+
+<script>
+  // 判断日志某一天（entry）中有没有event事件
+  function hasEvent(event, entry) {
+    return entry.events.indexOf(event) != -1
+  }
+
+  // 制作日志某一天（entry）的相关性表格
+  function tableFor(event, journal) {
+    // 用数组表示2 * 2 的表格，将索引看成二进制，00也就是0表示没做过event没变成松鼠，01也就是1表示做过envent没变成松鼠，10也就是2表示没做过envent变成松鼠了，所以索引 +1 就是有一件envent， +2 就是变成松鼠了，然后分别存在相应位置上
+    let table = [0, 0, 0, 0]
+    for (let i = 0; i < journal.length; i++) {
+      let entry = journal[i]
+      let index = 0
+
+      if (hasEvent(event, entry)) {
+        index += 1
+      }
+
+      if (entry.squirrel) {
+        index += 2
+      }
+
+      table[index]++
+    }
+
+    return table
+  }
+
+  // 计算event和squirrel之间的相关性
+  function phi(table) {
+    return (table[0] * table[3] - table[1] * table[2]) / Math.sqrt(
+      (table[0] + table[1]) *
+      (table[2] + table[3]) *
+      (table[0] + table[2]) *
+      (table[3] + table[1])
+    )
+  }
+
+  // 把每个事件当成对象的属性名，相关性作为值，相当于事件映射相关性。计算每个事件的相关性。
+  let result = {}
+
+  for (let i = 0; i < JOURNAL.length; i++) {
+    let entry = JOURNAL[i]
+
+    for (let j = 0; j < entry.events.length; j++) {
+      let event = entry.events[j]
+
+      if (!(event in result)) {
+        let phiValue = phi(tableFor(event, JOURNAL))
+
+        result[event] = phiValue
+      }
+    }
+  }
+
+  console.log('所有的数据')
+  for (let event in result) {
+    console.log(event + ':' + result[event])
+  }
+
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+
+  console.log('相关性绝对值大于0.1的数据')
+  for (let event in result) {
+    if (Math.abs(result[event]) > 0.1) {
+      console.log(event + ':' + result[event])
+    }
+  }
+
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+  console.log('-----------------------------------')
+
+
+  // 刷牙和花生对于变身的相关性很高,计算刷牙和花生之间的相关性
+  for (let i = 0; i < JOURNAL.length; i++) {
+    let entry = JOURNAL[i]
+
+    if (!hasEvent('brushed teeth', entry) && hasEvent('peanuts', entry)) {
+      entry.events.push('peanuts noteeth')
+    }
+  }
+
+  console.log(phi(tableFor('peanuts noteeth', JOURNAL)))
+
+</script>

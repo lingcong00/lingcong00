@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0;
+            margin: auto;
+            width: 500px;
+            border: 2px solid pink;
+        }
+
+        li {
+            background-color: aquamarine;
+            height: 300px;
+            border: 1px solid;
+            display: inline-block;
+        }
+
+        li:first-child:nth-last-child(1) {
+            width: 100%;
+        }
+
+        li:first-child:nth-last-child(2),
+        li:first-child:nth-last-child(2)~li {
+            width: 50%;
+        }
+
+        li:first-child:nth-last-child(3),
+        li:first-child:nth-last-child(3)~li {
+            width: 33.33%;
+        }
+
+        li:first-child:nth-last-child(4),
+        li:first-child:nth-last-child(4)~li {
+            width: 50%;
+        }
+
+
+        li:first-child:nth-last-child(5),
+        li:first-child:nth-last-child(5)~li {
+            width: 33.33%;
+        }
+
+        li:first-child:nth-last-child(5),
+        li:first-child:nth-last-child(5)+li {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

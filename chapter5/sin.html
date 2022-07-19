@@ -1,0 +1,64 @@
+// 118. 把如下公式【等号右边反A左边】转换为通过函数名来表达数学符号的单行纯文本表达式形式
+
+// ![formule](https://wikimedia.org/api/rest_v1/media/math/render/svg/467cf813e1be327172fa6def9ed61afb54f37f19)
+
+// * 用 `sigma(s,e,f)` 函数表示函数 `f(x)` 在 `x` 从 `s` 到 `e` 范围的和：
+// * 即如果 `f(x) = x*x` ，则 `sigma(1,10,f)` 将得到 1 到 10 的平方和
+// * 用 `factorial(x)` 表示 `x` 的阶乘
+// * 用 `pow(x,y)` 表示 `x` 的 `y` 次方
+// * 用 `division(x,y)` 表示 `x` 除以 `y`（`x/y`）
+// * 用 `add(x,y)` 表示 `x` 加 `y`
+// * 用 `mul(x,y)` 表示 `x` 乘以 `y`
+
+// 例如等差数列前 n 项和的公式可以表达为如下形式 `division(mul(n,add(n,1)),2)`
+
+
+// 作业：把此题目用代码实现。提示：高阶函数。
+
+<script>
+  function factorial(x) {
+    if (x == 0) {
+      return 1
+    } else {
+      return x * factorial(x - 1)
+    }
+  }
+
+  function pow(x, y) {
+    if (y == 0) {
+      return 1
+    }
+
+    if ((y & 1) == 0) {
+      return pow(x * x, y >> 1)
+    } else {
+      return pow(x * x, y >> 1) * x
+    }
+  }
+
+  function division(x, y) {
+    return x / y
+  }
+
+  function add(x, y) {
+    return x + y
+  }
+
+  function mul(x, y) {
+    return x * y
+  }
+
+  function sigma(s, e, f) {
+    let sum = 0
+
+    for (let i = s; i <= e; i++) {
+      sum += f(x)
+    }
+
+    return sum
+  }
+
+  let sin = (x) => sigma(0, 500, n => pow(-1, n) * pow(x, 2 * n + 1) / factorial(2 * n + 1))
+
+  
+</script>

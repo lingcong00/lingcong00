@@ -1,0 +1,243 @@
+<script>
+  // 创建链表节点
+  function createNode(val) {
+    return {
+      val: val,
+      next: null,
+    }
+  }
+
+  // 数组转链表
+  function arrayToList(ary) {
+    if (ary.length == 0) {
+      return null
+    }
+
+    let nodes = []
+    for (let i = 0; i < ary.length; i++) {
+      let node = createNode(ary[i])
+      nodes.push(node)
+    }
+
+    for (let i = 0; i < ary.length - 1; i++) {
+      nodes[i].next = nodes[i + 1]
+    }
+
+    return nodes[0]
+  }
+
+  function arrayToList2(ary) {
+    let prev = null
+
+    for (let i = ary.length - 1; i >= 0; i--) {
+      let node = createNode(ary[i])
+      node.next = prev
+      prev = node
+    }
+
+    return prev
+  }
+
+  function arrayToList3(ary) {
+    let dummy = createNode(0)
+    let prev = dummy
+
+    for (let i = 0; i < ary.length; i++) {
+      let node = createNode(ary[i])
+      prev.next = node
+      prev = node
+    }
+
+    return dummy.next
+  }
+
+  function arrayToList4(ary) {
+    if (ary.length == 0) return null
+
+    let head = createNode(ary[0])
+    head.next = arrayToList4(ary.slice(1))
+
+    return head
+  }
+
+  function arrayToList5(ary, start = 0) {
+    if (ary.length == start) return null
+
+    let head = createNode(ary[start])
+    head.next = arrayToList(ary, start + 1)
+
+    return head
+  }
+
+  // 链表转数组
+  function listToArray(list) {
+    let result = []
+
+    while (list) {
+      result.push(list.val)
+      list = list.next
+    }
+
+    return result
+  }
+
+  function listToArray2(list) {
+    if (list == null) return []
+
+    let tailAry = listToArray2(list.next)
+    tailAry.unshift(list.val) // 后调用的先出来，所以用unshift
+
+    return tailAry
+  }
+
+  // 链表前添加节点
+  function prepend(val, list) {
+    let node = createNode(val)
+    node.next = list
+
+    return node
+  }
+
+  // 链表后添加节点
+  function append(val, list) {
+    let node = createNode(val)
+
+    if (!list) {
+      return node
+    }
+
+    let head = list
+    while (head.next) {
+      head = head.next
+    }
+
+    head.next = node
+
+    return list
+  }
+
+  function append2(val, list) {
+    let node = createNode(val)
+    let dummy = createNode(0)
+    let head = dummy
+    dummy.next = list
+
+    while (head.next) {
+      head = head.next
+    }
+
+    head.next = node
+
+    return dummy.next
+  }
+
+  function append3(val, list) {
+    if (list == null) return createNode(val)
+
+    if (list.next == null) {
+      list.next = createNode(val)
+      return list
+    }
+
+    append3(val, list.next)
+
+    return list
+  }
+
+  // 查询 idx 位置链表的 val 
+  function nth(list, idx) {
+    if (!list) return undefined
+
+    for (let i = 0; list.next && i < idx; i++) {
+      list = list.next
+    }
+
+    if (i == idx) {
+      return list.val
+    } else {
+      return undefined
+    }
+  }
+
+  function nth2(list, idx) {
+    if (list == null) return undefined
+
+    if (idx == 0) return list.val
+
+    return nth2(list.next, idx - 1)
+  }
+
+  // 在链表 idx 位置插入 val
+  function insert(list, val, idx) {
+    let node = createNode(val)
+
+    if (list == null) {
+      return node
+    }
+
+    if (idx == 0) {
+      node.next = list
+      return node
+    }
+
+    let head = list
+    for (let i = 0; head.next && i < idx; i++) {
+      head = head.next
+    }
+
+    node.next = head.next
+    head.next = node
+
+    return list
+  }
+
+  function insert2(list, val, idx) {
+    if (list == null) {
+      return createNode(val)
+    }
+
+    if (list.next == null) {
+      list.next = createNode(val)
+      return head
+    }
+
+    if (idx == 0) {
+      let node = createNode(val)
+      node.next = list
+      return node
+    }
+
+    if (idx == 1) {
+      let node = createNode(val)
+      node.next = list.next
+      list.next = node
+      return list
+    }
+
+    insert(list.next, val, idx - 1)
+
+    return list
+  }
+
+  // 删除 idx 位置的节点
+  function del(list, idx) {
+    if (!list) {
+      return null
+    }
+
+    if (idx == 0) {
+      return list.next
+    }
+
+    let head = list
+    for (let i = 0; head.next && i < idx; i++) {
+      head = head.next
+    }
+
+    if (i == idx - 1) {
+      head.next = head.next.next
+    }
+
+    return list
+  }
+</script>

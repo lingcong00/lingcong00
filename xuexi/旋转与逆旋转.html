@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>rotate</button>
+    <button>rotate-reverse</button>
+    <div>
+        <div></div>
+    </div>
+</body>
+<style>
+    @keyframes rotating {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes rotating-r {
+        from {
+            transform: rotate(360deg);
+        }
+
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+    div {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: aqua;
+    }
+
+    body>div {
+        background-color: transparent;
+    }
+
+    button:nth-child(1):active~div {
+        animation-play-state: running;
+    }
+
+    button:nth-child(2):active~div>div {
+        animation-play-state: running;
+    }
+
+    body>div {
+
+        animation: rotating 2s infinite linear paused;
+    }
+
+    body>div>div {
+        animation: rotating-r 2s infinite linear paused;
+    }
+</style>
+
+</html>

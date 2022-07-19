@@ -1,0 +1,74 @@
+<script src="https://eloquentjavascript.net/2nd_edition/code/ancestry.js"></script>
+<script>
+  // 把 JSON 格式的数据转为 Js 能识别的数据
+  let ancestry = JSON.parse(ANCESTRY_FILE)
+
+  // forEach 实现
+  function forEach(ary, action) {
+    for (let i = 0; i < ary.length; i++) {
+      action(ary[i], i, ary)
+    }
+  }
+
+  // filter 实现
+  function filter(ary, test) {
+    let passed = []
+
+    for (let i = 0; i < ary.length; i++) {
+      if (test(ary[i])) {
+        passed.push(ary[i])
+      }
+    }
+
+    return passed
+  }
+
+  function filter1(ary, test) {
+    let passed = []
+
+    forEach(ary, (item, idx) => {
+      if (test(item, idx, ary)) {
+        passed.push(item)
+      }
+    })
+  }
+  // map 实现
+  function map(ary, transform) {
+    let result = []
+
+    for (let i = 0; i < ary.length; i++) {
+      result.push(transform(ary[i]))
+    }
+
+    return result
+  }
+
+  function map1(ary, transform) {
+    let result = []
+
+    forEach(ary, (item, idx) => {
+      result.push(transform(item, idx, ary))
+    })
+
+    return result
+  }
+
+  // reduce 实现
+  function reduce(ary, reducer, result) {
+    let start = 0
+
+    if (result === undefined) {
+      result = ary[0]
+      start = 1
+    }
+
+
+    for (let i = start; i < ary.length; i++) {
+      result = reducer(result, ary[i])
+    }
+
+    return result
+  }
+
+
+</script>

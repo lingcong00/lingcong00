@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <style>
+        section {
+            height: 680px;
+            width: 1020px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            border: 2px solid red;
+            overflow: hidden;
+        }
+
+        section>input {
+            display: none;
+        }
+
+        ul {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 100%;
+            width: 9999999px;
+            font-size: 0;
+            transition: 1s;
+        }
+
+        ul li {
+            display: inline-block;
+            height: 100%;
+            width: 1020px;
+        }
+
+        section ul li div {
+            position: absolute;
+        }
+
+        ul li img {
+            height: 680px;
+            width: 1020px;
+        }
+
+        ul li label {
+            position: absolute;
+            visibility: hidden;
+            z-index: 100;
+            height: 80px;
+            width: 50px;
+            font-size: 50px;
+            line-height: 80px;
+            text-align: center;
+            color: rgb(227, 236, 243, .8);
+            background-color: rgb(122, 115, 115, .5);
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+        }
+
+        ul li label:nth-of-type(1) {
+            left: 0;
+            border-radius: 0 50px 50px 0;
+        }
+
+        ul li label:nth-of-type(2) {
+            left: 970px;
+            border-radius: 50px 0 0 50px;
+        }
+
+        input:nth-child(1):checked~ul {
+            left: 0;
+        }
+
+        input:nth-child(2):checked~ul {
+            left: -100%;
+        }
+
+        input:nth-child(3):checked~ul {
+            left: -200%;
+        }
+
+        input:nth-child(4):checked~ul {
+            left: -300%;
+        }
+
+        input:nth-child(5):checked~ul {
+            left: -400%;
+
+        }
+
+        input:nth-child(1):checked~ul li:nth-child(1) label {
+            visibility: visible;
+
+        }
+
+        input:nth-child(2):checked~ul li:nth-child(2) label {
+            visibility: visible;
+        }
+
+        input:nth-child(3):checked~ul li:nth-child(3) label {
+            visibility: visible;
+        }
+
+        input:nth-child(4):checked~ul li:nth-child(4) label {
+            visibility: visible;
+        }
+
+        input:nth-child(5):checked~ul li:nth-child(5) label {
+            visibility: visible;
+        }
+
+        section>div {
+            position: absolute;
+            display: inline-block;
+            left: 0;
+            bottom: 20px;
+            z-index: 1000;
+        }
+
+        section>div label {
+            display: inline-block;
+            margin: 10px;
+            height: 20px;
+            width: 20px;
+            background-color: rgb(204, 197, 197, .5);
+            border-radius: 100%;
+        }
+
+        input:nth-child(1):checked~div label:nth-child(1),
+        input:nth-child(2):checked~div label:nth-child(2),
+        input:nth-child(3):checked~div label:nth-child(3),
+        input:nth-child(4):checked~div label:nth-child(4),
+        input:nth-child(5):checked~div label:nth-child(5) {
+            background-color: rgb(240, 248, 255, .8);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <input type="radio" name="slider" id="s1" checked>
+        <input type="radio" name="slider" id="s2">
+        <input type="radio" name="slider" id="s3">
+        <input type="radio" name="slider" id="s4">
+        <input type="radio" name="slider" id="s5">
+        <ul>
+            <li>
+                <div><img src="https://cdn.pixabay.com/photo/2021/09/24/10/00/chick-6652163__340.jpg" alt="">
+                    <label for="s5">&lt;</label>
+                    <label for="s2">&gt;</label>
+                </div>
+            </li>
+
+            <li>
+                <div> <img src="https://cdn.pixabay.com/photo/2016/11/19/16/56/adventure-1840310__340.jpg" alt="">
+                    <label for="s1">&lt;</label>
+                    <label for="s3">&gt;</label>
+                </div>
+            </li>
+            <li>
+                <div> <img src="https://cdn.pixabay.com/photo/2021/12/27/14/39/tulips-6897351__340.jpg" alt="">
+                    <label for="s2">&lt;</label>
+                    <label for="s4">&gt;</label>
+                </div>
+            </li>
+            <li>
+                <div><img src="https://cdn.pixabay.com/photo/2021/03/16/21/46/tea-6101059__340.jpg" alt="">
+                    <label for="s3">&lt;</label>
+                    <label for="s5">&gt;</label>
+                </div>
+            </li>
+            <li>
+                <div><img src="https://cdn.pixabay.com/photo/2020/03/26/10/58/norway-4970080__340.jpg" alt="">
+                    <label for="s4">&lt;</label>
+                    <label for="s1">&gt;</label>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <label for="s1"></label>
+            <label for="s2"></label>
+            <label for="s3"></label>
+            <label for="s4"></label>
+            <label for="s5"></label>
+        </div>
+    </section>
+</body>
+
+</html>

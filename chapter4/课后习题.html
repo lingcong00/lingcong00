@@ -1,0 +1,102 @@
+<script>
+  // 特定范围数字求和
+  function range(start, end) {
+    let result = []
+
+    for (let i = start; i <= end; i++) {
+      result.push(i)
+    }
+
+    return result
+  }
+
+  function sum(ary) {
+    let result = 0
+
+    for (let i = 0; i < ary.length; i++) {
+      result += ary[i]
+    }
+
+    return result
+  }
+
+  function range1(start, end, step = 1) {
+    if (arguments.length == 1) {
+      end = start
+      start = 0
+    }
+
+    let result = []
+
+    for (let i = start; step > 0 ? i <= end : i >= end; i += step) {
+      result.push(i)
+    }
+
+    return result
+  }
+
+  // 逆转数组
+  function reverseArray(ary) {
+    let result = []
+
+    for (let i = ary.length - 1; i >= 0; i--) {
+      result.push(ary[i])
+    }
+
+    return result
+  }
+
+  function reverseArrayInPlace(ary) {
+    let l = ary.length
+
+    for (let i = 0; i < l >> 1; i++) {
+      let t = ary[i]
+      ary[i] = ary[l - 1 - i]
+      ary[l - 1 - i] = t
+    }
+
+    return ary
+  }
+
+  // 深度比较
+  function deepEqual(a, b) {
+    if (a === b) return true
+
+    if (a !== a && b !== b) return true
+
+    let typeA = typeof a
+    let typeB = typeof b
+    if (typeA != typeB) {
+      return false
+    } else {
+      if (typeA == 'object') { // 为数组或者对象（null的情况上面已经去除）
+        if (Array.isArray(a) == Array.isArray(b)) { // 都为数组或都不为数组
+          if (Array.isArray(a)) { // 为数组
+            if (a.length == b.length) {
+              for (let i = 0; i < ary.length; i++) {
+                if (!deepEqual(a[i], b[j])) {
+                  return false
+                }
+              }
+              return true
+            } else return false
+          } else {  // 为对象
+            let keysA = Object.keys(a)
+            let keysB = Object.keys(b)
+            if (keysA.length == keysB.length) {
+              let keys = Array.from(new Set(keysA.concat(keysB))) // keys合并后去重
+              if (keys.length == keysa.length) {
+                for (let i = 0; i < keys.length; i++) {
+                  if (!deepEqual(a[keys[i]]), b[keys[i]]) {
+                    return false
+                  }
+                }
+                return true
+              } else return false
+            } else return false
+          }
+        } else return false
+      } else return a === b
+    }
+  }
+</script>

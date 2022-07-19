@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><span>11</span>
+        <span>22</span>
+        <span>333</span>
+        <span>4444</span>
+        <span>555</span>
+    </div>
+</body>
+<style>
+    div {
+        float: left;
+        box-shadow: 0 0 1px black;
+    }
+
+    span {
+        float: left;
+        color: yellow;
+        border: 1px solid red;
+        transition: color 0s 99999s;
+    }
+
+    div:hover span {
+        color: yellow;
+        transition: none;
+    }
+
+    div span:hover {
+        color: aquamarine;
+        transition: none;
+    }
+</style>
+
+</html>

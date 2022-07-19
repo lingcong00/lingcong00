@@ -1,0 +1,151 @@
+* {
+  box-shadow: 0 0 1px red;
+}
+
+section {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+div {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 0 2px 2px;
+  }
+}
+@for $i from 1 through 60 {
+  div:nth-child(#{$i}) {
+    transform: rotate($i * 6deg);
+  }
+}
+div:nth-child(5n)::before {
+  width: 5px;
+  height: 15px;
+}
+.dir {
+  position: absolute;
+  display: block;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.dir-s {
+  animation: time 60s steps(60, end) infinite;
+  > span {
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 270px;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin: auto;
+    background-color: lightcoral;
+    border-radius: 50% 50% 0 0;
+    animation: dir-s 1s infinite;
+  }
+}
+.dir-m {
+  animation: time 3600s steps(60, end) infinite;
+  > span {
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 240px;
+    left: 0;
+    right: 0;
+    top: 40px;
+    margin: auto;
+    background-color: rgb(105, 81, 81);
+    border-radius: 50% 50% 0 0;
+    animation: dir-m 60s ease-out infinite;
+  }
+}
+.dir-h {
+  animation: time 43200s linear infinite;
+  > span {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 210px;
+    left: 0;
+    right: 0;
+    top: 60px;
+    margin: auto;
+    background-color: #333;
+    border-radius: 50% 50% 0 0;
+  }
+}
+@keyframes time {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dir-s {
+  0% {
+    transform: rotate(0);
+  }
+  5% {
+    transform: rotate(3deg);
+  }
+  10% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes dir-m {
+  0% {
+    transform: rotate(0);
+  }
+  0.125% {
+    transform: rotate(3deg);
+  }
+  0.25% {
+    transform: rotate(0);
+  }
+  0.375% {
+    transform: rotate(-1.5deg);
+  }
+  0.5% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

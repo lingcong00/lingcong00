@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 两个元素 -->
+    <div>
+        <span>我</span>
+        <span>我</span>
+    </div>
+    <style>
+        @keyframes rotate1 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate2 {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+
+        div {
+            width: 200px;
+            height: 1px;
+            line-height: 1px;
+            background-color: rgba(0, 0, 0, .5);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            animation: rotate1 2s infinite linear;
+        }
+
+        span:nth-child(1) {
+            float: right;
+            animation: rotate2 2s infinite linear;
+        }
+
+        span:nth-child(2) {
+            float: left;
+            animation: rotate2 2s infinite linear;
+        }
+    </style>
+    <!-- 一个元素 -->
+    <section>我</section>
+    <style>
+        @keyframes rotate3 {
+            from {
+                transform: rotate(0deg) translate(100px) rotate(360deg);
+            }
+
+            to {
+                transform: rotate(360deg) translate(100px) rotate(0deg);
+            }
+        }
+
+        section {
+            margin: 200px;
+            background-color: aqua;
+            width: 16px;
+            animation: rotate3 2s infinite linear;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单</title>
+    <style>
+        * {
+            background-color: rgb(0, 0, 0, .1);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+        }
+
+        .slide li {
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+            font-size: 24px;
+            padding: 0 5px;
+
+
+        }
+
+        .slide li li {
+            display: block;
+        }
+
+        .slide ul {
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+
+        .slide ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        .slide>li ul {
+            display: none;
+        }
+
+        .slide li:hover>ul {
+            display: block;
+        }
+
+        li:hover {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="slide">
+        <li>
+            文件
+            <ul>
+                <li>新建文件
+                    <ul>
+                        <li>新建文件</li>
+                        <li>打开文件</li>
+                        <li>保存文件
+                            <ul>
+                                <li>新建文件</li>
+                                <li>打开文件</li>
+                                <li>保存文件
+                                    <ul>
+                                        <li>新建文件</li>
+                                        <li>打开文件</li>
+                                        <li>保存文件</li>
+                                    </ul>
+
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+                <li>打开文件</li>
+                <li>保存文件</li>
+            </ul>
+        </li>
+        <li>
+            文件
+            <ul>
+                <li>新建文件</li>
+                <li>打开文件</li>
+                <li>保存文件</li>
+            </ul>
+        </li>
+        <li>
+            文件
+            <ul>
+                <li>新建文件</li>
+                <li>打开文件</li>
+                <li>保存文件</li>
+            </ul>
+        </li>
+        <li>
+            文件
+            <ul>
+                <li>新建文件</li>
+                <li>打开文件</li>
+                <li>保存文件</li>
+            </ul>
+        </li>
+
+    </ul>
+</body>
+
+</html>

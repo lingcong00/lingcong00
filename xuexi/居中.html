@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居中</title>
+    <style>
+        section {
+            width: 1000px;
+            height: 1000px;
+            background-color: antiquewhite;
+            border: 2px solid;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            /* margin: auto;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle; */
+            /* 行内 */
+            /* text-align: center;
+            line-height: 1000px;
+            font-size: 0; */
+        }
+
+        /* 第一种：定位 */
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        /* 第二种：行内 */
+        /* img {
+            display: inline-block;
+            vertical-align: middle;
+        } */
+        /* 第三种：表格 */
+        /* 父元素设置display:table-cell，vertical-align就行  float和position会破坏布局*/
+    </style>
+</head>
+
+<body>
+    <section>
+        <img src="https://cdn.pixabay.com/photo/2017/06/05/07/58/butterfly-2373175__480.png" alt="">
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 480px;
+  border: 1px solid red;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+}
+
+li {
+  height: 60px;
+  width: 100px;
+}
+
+ul li:nth-child(n+9) {
+  margin-left: 100px;
+}
+
+ul li:nth-child(n+17) {
+  margin-left: 200px;
+}
+
+ul li:nth-child(n+25) {
+  margin-left: 300px;
+}
+
+ul li:nth-child(n+33) {
+  margin-left: 400px;
+}
+
+ul li:nth-child(n+41) {
+  margin-left: 500px;
+}
+
+ul li:nth-child(n+49) {
+  margin-left: 600px;
+}
+
+ul li:nth-child(n+57) {
+  margin-left: 700px;
+}
+
+ul li:nth-child(n+65) {
+  margin-left: 800px;
+}
+
+ul li:nth-child(n+73) {
+  margin-left: 900px;
+}
+
+ul li:nth-child(n+81) {
+  margin-left: 1000px;
+}
+
+ul li:nth-child(n+89) {
+  margin-left: 1100px;
+}
+
+ul li:nth-child(n+97) {
+  margin-left: 1200px;
+}
+
+ul li:nth-child(n+105) {
+  margin-left: 1300px;
+}
+
+ul li:nth-child(n+113) {
+  margin-left: 1400px;
+}
+
+li:nth-child(8n+9) {
+  margin-top: -480px;
+}/*# sourceMappingURL=scss.css.map */

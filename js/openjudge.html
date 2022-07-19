@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- 1.3编程基础之算术表达式与顺序执行 -->
+  <script type="sss" class="foo" id="ch0103/01">
+    var A = Number(prompt('请输入整数A'))
+    var B = Number(prompt('请输入整数B'))
+    var C = A + B
+
+    console.log(C)
+    </script>
+
+  <script type="sss" class="foo" id="ch0103/02">
+    var a = Number(prompt(""))
+    var b = Number(prompt(""))
+    var c = Number(prompt(""))
+    var d = (a + b) * c
+
+    console.log(d)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/03">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var d = Math.floor((a + b) / c)
+
+    console.log(d)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/04">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var r = a % b
+    var z = (a - r) / b
+
+    console.log(z, r)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/05">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = a / b
+
+    console.log(c.toFixed(9))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/06">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = b / a
+
+    console.log(c.toFixed(3) * 100 + "%")
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/07">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var d = Number(prompt())
+    var x = Number(prompt())
+
+    console.log(a * x ** 3 + b * x ** 2 + c * x + d)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/08">
+    var f = Number(prompt())
+    var C = 5 * (f - 32) / 9
+
+    console.log(C.toFixed(5))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/09">
+    var r = Number(prompt())
+    var d = 2 * r
+    var c = 2 * Math.PI * r
+    var a = Math.PI * r ** 2
+
+    console.log(d.toFixed(4),c.toFixed(4),a.toFixed(4))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/010 ">
+    var r1 = Number(prompt())
+    var r2 = Number(prompt())
+    var R = 1 / (1 / r1 + 1 / r2)
+
+    console.log(R.toFixed(2))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/011 ">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var r = a % b
+
+    console.log(r)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/012 ">
+    var r = Number(prompt())
+    var v = 4 / 3 * Math.PI * r ** 3
+
+    console.log(v.toFixed(2))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/013 ">
+    var a = Number(prompt())
+    var g = a % 10
+    var s = (a - g) / 10 % 10
+    var b = (a - s * 10 - g) / 100 % 10
+
+    console.log("" + g + s + b)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/014 ">
+    var h = Number(prompt())
+    var r = Number(prompt())
+    var v = Math.PI * r ** 2 * h 
+    var t = 20 *1000 / v
+
+    console.log(Math.ceil(t))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/015 ">
+    var n = Number(prompt())
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var g = n - y /x 
+
+    console.log(Math.floor(g))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/016 ">
+    var x1 = Number(prompt())
+    var y1 = Number(prompt())
+    var x2 = Number(prompt())
+    var y2 = Number(prompt())
+    var c = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+    console.log(c.toFixed(3))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/017 ">
+    var x1 = Number(prompt())
+    var y1 = Number(prompt())
+    var x2 = Number(prompt())
+    var y2 = Number(prompt())
+    var x3 = Number(prompt())
+    var y3 = Number(prompt())
+    var a = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+    var b = Math.sqrt((x3 - x1) ** 2 + (y3 - y1) ** 2)
+    var c = Math.sqrt((x3 - x2) ** 2 + (y3 - y2) ** 2)
+    var p = (a + b + c) / 2
+    var s = Math.sqrt(p * (p - a) * (p - c) * (p - b))
+
+    console.log(s.toFixed(2))
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/018 ">
+    var a1 = Number(prompt())
+    var a2 = Number(prompt())
+    var n = Number(prompt())
+    var d = a2 - a1
+    var an = a1 + (n - 1) * d
+
+    console.log(an)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/019 ">
+    var A = Number(prompt())
+    var B = Number(prompt())
+    var c = A * B
+
+    console.log(c)
+  </script>
+
+  <script type="sss" class="foo" id="ch0103/020 ">
+    var n = Number(prompt())
+    var a = 2 ** n
+
+    console.log(a)
+  </script>
+
+  <!-- 1.4编程基础之逻辑表达式与条件分支 -->
+  <script type="sss" id="ch0104/01">
+    var N = Number(prompt())
+
+    if (N > 0) {
+      console.log('positive')
+    } else if (N == 0) {
+      console.log('zero')
+    } else {
+      console.log('negative')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/02">
+    var n = Number(prompt())
+
+    if (n >= 0) {
+      console.log(n)
+    } else {
+      console.log(-n)
+    }
+  </script>
+
+  <script type="sss" id="ch0104/03">
+    var n = Number(prompt())
+
+    if (n % 2 == 1) {
+      console.log('odd')
+    } else {
+      console.log('even')
+    }
+  </script>
+
+  <script xtype="sss" id="ch0104/04">
+
+  </script>
+
+  <script type="sss" id="ch0104/05">
+    var x = Number(prompt())
+    var y = Number(prompt())
+
+    if ((x - y) > 0) {
+      console.log('>')
+    } else if ((x - y) == 0) {
+      console.log('=')
+    } else {
+      console.log('<')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/06">
+    var n = Number(prompt())
+
+    if (n >= 10 && n <= 99) {
+      console.log(1)
+    } else {
+      console.log(0)
+    }
+  </script>
+
+  <script type="sss" id="ch0104/07">
+    var a = Number(prompt())
+    var b = Number(prompt())
+
+    if (a >= 10 || b >= 20) {
+      console.log(1)
+    } else {
+      console.log(0)
+    }
+  </script>
+
+  <script type="sss" id="ch0104/08">
+    var n = Number(prompt())
+
+    if (n % 15 == 0) {
+      console.log('YES')
+    } else {
+      console.log('NO')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/09">
+    var n = Number(prompt())
+    var flag = false
+
+    if (n % 3 == 0) {
+      console.log(3)
+      flag = true
+    }
+    if (n % 5 == 0) {
+      console.log(5)
+      flag = true
+    }
+    if (n % 7 == 0) {
+      console.log(7)
+      flag = true
+    }
+    if (!flag) {
+      console.log('n')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/10">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var flag = 0
+
+    if (a < 60) {
+      flag = flag + 1
+    }
+    if (b < 60) {
+      flag = flag + 1
+    }
+    if (flag == 1) {
+      console.log(1)
+    } else {
+      console.log(0)
+    }
+  </script>
+
+  <script type="sss" id="ch0104/011">
+    var d = Number(prompt())
+
+    if (!(d == 1 || d == 3 || d == 5)) {
+      console.log('YES')
+    } else {
+      console.log('NO')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/012">
+    var d = Number(prompt())
+    var t1 = d / 1.2
+    var t2 = d / 3 + 27 + 23
+
+    if (t1 > t2) {
+      console.log('bike')
+    } else if (t1 == t2) {
+      console.log('all')
+    } else {
+      console.log('walk')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/013">
+    var N = Number(prompt())
+
+    if (N >= 10) {
+      console.log(N / 2 - 1.5)
+    } else if (N >= 5) {
+      console.log(2 - 1.5 * (N - 3) * (N - 3))
+    } else {
+      console.log(-N + 2.5)
+    }
+  </script>
+
+  <script type="sss" id="ch0104/014">
+    var w = Number(prompt())
+    var p = 8
+    var j = prompt()
+
+    if (w > 1000) {
+      p += Math.ceil((w - 1000) / 500) * 4
+    }
+    if (j === 'y') {
+      p += 5
+    }
+
+    console.log(p)
+  </script>
+
+  <script type="sss" id="ch0104/015">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var max = a
+
+    if (b > max) {
+      max = b
+    }
+    if (c > max) {
+      max = c
+    }
+
+    console.log(max)
+  </script>
+
+  <script type="sss" id="ch0104/016">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var p = (a + b + c) / 2
+
+    if (Math.sqrt(p * (p - a) * (p - b) * (p - c)) > 0) {
+      console.log('yes')
+    } else {
+      console.log('no')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/017">
+    var a = Number(prompt())
+
+    if (a % 400 == 0 || a % 4 == 0 && a % 100 != 0) {
+      console.log('Y')
+    } else {
+      console.log('N')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/018">
+    var x = Number(prompt())
+    var y = Number(prompt())
+
+    if (x >= -1 && x <= 1 && y >= -1 && y <= 1) {
+      console.log('yes')
+    } else {
+      console.log('no')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/019">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var o = prompt()
+
+    if (o === '+') {
+      console.log(a + o + b + '=' + (a + b))
+    } else if (o === '-') {
+      console.log(a + o + b + '=' + (a - b))
+    } else if (o === '*') {
+      console.log(a + o + b + '=' + (a * b))
+    } else if (o === '/') {
+      console.log(a + o + b + '=' + (a / b))
+    } else {
+      console.log('Invalid Operator!')
+    }
+  </script>
+
+  <script type="sss" id="ch0104/020">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = Number(prompt())
+    var delta = b * b - 4 * a * c
+
+    if (delta == 0) {
+      var x = -b / (2 * a)
+      console.log('x1=x2=' + x)
+    } else if (delta > 0) {
+      var sqrt_delta = Math.sqrt(delta)
+      var x1 = (-b + sqrt_delta) / (2 * a)
+      var x2 = (-b - sqrt_delta) / (2 * a)
+      console.log('x1=' + x1 + ';x2=' + x2)
+    } else {
+      var x1r = -b / (2 * a)
+      var x1i = Math.sqrt(-delta) / (2 * a)
+      var x2r = -b / (2 * a)
+      var x2i = -Math.sqrt(-delta) / (2 * a)
+      if (x1i < 0) {
+        var x1 = '' + x1r + x1i + 'i' //x1i为负数时，拼接时-不会省略
+      } else {
+        var x1 = x1r + '+' + x1i + 'i' //x1i为正数时，拼接时+会省略，需要拼接一个+号
+      }
+      if (x2i < 0) {
+        var x2 = '' + x2r + x2i + 'i'
+      } else {
+        var x2 = x2r + '+' + x2i + 'i'
+      }
+      console.log('x1=' + x1 + ';x2=' + x2)
+    }
+  </script>
+
+  <script type="sss" id="ch0104/021">
+    var n = Number(prompt())
+    var x = Number(prompt())
+    var y = Number(prompt())
+    var r = Math.floor(n - y / x)
+
+    console.log(r)
+  </script>
+
+  <!-- 1.5编程基础之循环控制 -->
+  <script type="sss" id="ch0105/01">
+    var n = Number(prompt())
+    var sum = 0
+    var counter = 0
+     
+    while (counter < n) {
+      var age = Number(prompt())
+          sum += age
+      counter++
+    }
+
+    var r = sum / n
+
+    console.log(r.toFixed(2))
+  </script>
+
+  <script type="sss" id="ch0105/02">
+    var sum = 0
+    var counter = 0
+
+    while (counter < 12) {
+      var n = Number(prompt())
+          sum += n
+          counter++
+    }
+
+    var v = sum / 12
+
+    console.log(v.toFixed(2) + '$')
+  </script>
+
+  <script type="sss" id="ch0105/03">
+    var n = Number(prompt())
+    var sum = 0
+    var counter = 0
+
+    while (counter < n) {
+      var x = Number(prompt())
+          sum += x
+          counter++
+    }
+
+    var v = sum / n
+
+    console.log(v.toFixed(4))
+  </script>
+
+  <script type="sss" id="ch0105/04">
+    var n = Number(prompt())
+    var sum = 0
+    var counter = 0
+
+    while (counter < n) {
+      var x = Number(prompt())
+          sum += x 
+          counter++
+    }
+
+    var v = sum / n
+
+    console.log(sum,v.toFixed(5))
+  </script>
+
+  <script type="sss" id="ch0105/05">
+    var n = Number(prompt())
+    var max = -Infinity
+    var counter = 0
+
+    while (counter < n) {
+      var x = Number(prompt())
+      if (x > max) {
+        max = x
+      }
+      counter++
+    }
+
+    console.log(max)
+  </script>
+
+  <script type="sss" id="ch0105/06">
+    var n = Number(prompt())
+    var max = -Infinity
+    var min = Infinity
+    var counter = 0
+
+    while (counter < n) {
+      var x = Number(prompt())
+      if (x > max) {
+        max = x
+      } 
+      if (x < min) {
+        min = x
+      }
+      counter++
+    }
+
+    var k = max - min
+
+    console.log(k)
+  </script>
+
+  <script type="sss" id="ch0105/07">
+    var n = Number(prompt())
+    var sum_au = 0
+    var sum_ag = 0
+    var sum_cu = 0
+    var counter = 0
+
+    while (counter < n) {
+      var au = Number(prompt())
+      var ag = Number(prompt())
+      var cu = Number(prompt())
+
+          sum_au += au
+          sum_ag += ag
+          sum_cu += cu
+          counter++
+    }
+    console.log(n,sum_au,sum_ag,sum_cu)
+  </script>
+
+  <script type="sss" id="ch0105/08">
+    var n = Number(prompt())
+    var sum = (n - 2) * 180
+    var counter = 0
+
+    while (counter < n - 1) {
+      var x = Number(prompt())
+          sum -= x
+
+      counter++
+    }
+
+    console.log(sum)
+  </script>
+
+  <script type="sss" id="ch0105/09">
+    var m = Number(prompt())
+    var n = Number(prompt())
+    var sum = 0
+    var counter = m
+
+    while (counter <= n) {
+      if (counter % 2 == 1) {
+        sum += counter
+      }
+      counter++
+    }
+
+    console.log(sum)
+
+
+    var m = Number(prompt())
+    var n = Number(prompt())
+    var sum = 0
+
+    if (m % 2 == 0) {
+      m = m + 1
+    }
+    if (n % 2 == 0) {
+      n = n - 1
+    }
+
+    var counter = m
+
+    while (counter <= n) {
+      sum += counter
+      counter +=2
+    }
+
+    console.log(sum)
+  </script>
+
+  <script type="sss" id="ch0105/010">
+    var m = Number(prompt())
+    var n = Number(prompt())
+    var sum = 0
+    var counter = m
+    
+    while (counter <= n) {
+      if (counter % 17 == 0) {
+        sum += counter
+      }
+      counter++
+    }
+
+    console.log(sum)
+  </script>
+
+  <script type="sss" id="ch0105/011">
+    var k = Number(prompt())
+    var flag_1 = 0
+    var flag_5 = 0
+    var flag_10 = 0
+    var counter = 0
+
+    while (counter < k) {
+      var x = Number(prompt())
+      if (x == 1) {
+        flag_1++
+      } else if (x == 5) {
+        flag_5++
+      } else if (x == 10) {
+        flag_10++
+      }
+      counter++
+    }
+
+    console.log(flag_1)
+    console.log(flag_5)
+    console.log(flag_10)
+  </script>
+
+  <script type="sss" id="ch0105/012">
+    var N = Number(prompt())
+    var m = Number(prompt())
+    var flag = 0
+    var counter = 0
+
+    while (counter < N) {
+      var x = Number(prompt())
+      if (x == m) {
+        flag++
+      }
+      counter++
+    }
+
+    console.log(flag)
+  </script>
+
+  <script type="sss" id="ch0105/013">
+    var a = Number(prompt())
+    var n = Number(prompt())
+    var result = 1
+    var counter = 0
+
+    while (counter < n) {
+      result *= a
+      counter++
+    }
+
+    console.log(result)
+  </script>
+
+  <script type="sss" id="ch0105/014">
+    var x = Number(prompt())
+    var n = Number(prompt())
+    var counter = 0
+
+    while (counter < n) {
+        x = x * (1 + 0.1 / 100)
+        counter++
+    }
+
+    console.log(x.toFixed(4))
+  </script>
+
+  <script type="sss" id="ch0105/015">
+    var R = Number(prompt())
+    var M = Number(prompt())
+    var Y = Number(prompt())
+
+    for (var i = 0; i < Y; i++) {
+      M = M * (1 + R / 100)
+    }
+    
+    console.log(Math.floor(M))
+  </script>
+
+  <script type="sss" id="ch0105/016">
+    var N = Number(prompt())
+    var K = Number(prompt())
+    var sum_N = 0
+    var result_Y = 200
+    var flag = false
+
+    for (var M = 1; M <= 20 ; M++) {
+      sum_N += N
+      if (sum_N >= result_Y) {
+        flag = true
+        break
+      } else {
+        result_Y *= (1 + K / 100)
+      }
+    }
+
+    if (!flag) {
+      console.log('Impossible')
+    } else {
+      console.log(M)
+    }
+  </script>
+
+  <script type="sss" id="ch0105/017">
+    var k = Number(prompt())
+    var x1 = 1 
+    var x2 = 0
+    var result = 0
+
+    for (var i = 0; i < k ; i++) {
+      result = x1 + x2
+      x1 = x2
+      x2 = result
+    }
+    console.log(result)
+  </script>
+
+  <script type="sss" id="ch0105/018">
+    var n = Number(prompt())
+    var total = Number(prompt())
+    var effective = Number(prompt())
+    var radio = effective / total
+
+    for (var i = 1; i < n; i++) {
+      var t = Number(prompt())
+      var e = Number(prompt())
+      var r = e / t
+
+      if (r - radio > 5 / 100) {
+        console.log('better')
+      } else if (radio - r > 5 / 100) {
+        console.log('worse')
+      } else {
+        console.log('same')
+      }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/019">
+    var n = Number(prompt())
+    var sum = 0
+
+    for (var i = 0; i < n; i++) {
+      var x = Number(prompt())
+      var y = Number(prompt())
+      var p = Number(prompt())
+      var d = Math.sqrt(x * x + y * y)
+
+        sum += d / 50 * 2 + p + p / 2 
+    }
+
+    console.log(Math.ceil(sum))
+  </script>
+
+  <script type="sss" id="ch0105/020">
+    var h = Number(prompt())
+    var sum = h
+
+    for (var i = 2; i <= 10; i ++) {
+       h = h / 2 //第i次落地之前的高度
+       sum += h * 2 //落地以后的距离累加 
+    }
+
+    console.log(sum, h / 2)
+  </script>
+
+  <script type="sss" id="ch0105/021">
+    var N = Number(prompt())
+    var r = 1
+    
+    for (;;) {
+      if (N == 1) {
+        console.log('End')
+        break
+      }
+      if (N % 2) {
+        r = N * 3 + 1
+        console.log(N + '*3+1=' + r)
+        N = r
+      }
+      if (!(N % 2)) {
+        r = N / 2
+        console.log(N + '/' + 2 + '=' + r)
+        N = r
+      }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/022">
+    var money = 0 //手上的钱
+    var stock = 0 //存的钱
+    var flag =false
+
+    for (var i = 1; i <= 12; i++) {
+      money += 300
+      var budget = Number(prompt())
+
+      if (money < budget) {
+        console.log(-i)
+        flag = true
+        break
+      }
+
+      money = money - budget
+
+      if (money >= 100) {
+        var left = money % 100 
+        stock += money - left
+        money = left
+      }
+    }
+
+    if(!flag) {
+      console.log(stock * 1.2 + money)
+    }
+  </script>
+
+  <script type="sss" id="ch0105/023">
+    var m = Number(prompt())
+    var n = Number(prompt())
+    var c = 0
+
+    for (var i = 0; i < n; i++) {
+      var x = Number(prompt())
+      
+      if (x > m) {
+        c++
+      } else {
+        m = m - x
+      }
+    }
+
+    console.log(c)
+  </script>
+
+  <script type="sss" id="ch0105/024">
+    var n = Number(prompt())
+    var c = 0
+    var max = 0
+
+    for (var i = 1; i <= n; i++) {
+      var x = Number(prompt())
+      var y = Number(prompt())
+
+      if (x >= 90 && x <= 140 && y >= 60 && y <= 90) {
+        c++ 
+        if (c > max) {
+          max = c
+        }
+      } else {
+        c = 0
+      }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/025">
+    for (var n = 100; n < 1000; n++){
+      var n7g = n % 7
+      var n7s = (n - n7g) / 7 % 7
+      var n7b = (n - n7g - n7s * 7) / 7 / 7 %  7      
+      var n9g = n % 9
+      var n9s = (n - n9g) / 9 % 9
+      var n9b = (n - n9g - n9s * 9) / 9 / 9 % 9
+
+      if (n7g == n9b && n7s == n9s && n7b == n9g) {
+        console.log(n, '' + n7b + n7s + n7g, '' + n9b + n9s + n9g)
+        break
+      }
+    }
+    
+  </script>
+
+  <script type="sss" id="ch0105/026">
+    var N = Number(prompt())
+    var c = 0
+
+    for (var i = 0; i < N; i++) {
+      var n = Number(prompt())
+
+      var ng = n % 10 
+      var ns = (n - ng) / 10 % 10
+      var nb = (n - ng - ns * 10) / 10 / 10 % 10
+      var nq = (n - ng - ns * 10 - nb * 100) / 10 / 10 / 10 % 10
+
+      if (ng - nq - nb - ns > 0) {
+        c++
+      }
+    }
+
+    console.log(c)
+  </script>
+
+  <script type="sss" id="ch0105/027">
+    var K = Number(prompt())
+    var Sn = 0
+
+    for (var n = 1; ; n++) {
+      Sn += 1 / n 
+      if (Sn > K) {
+        console.log(n)
+        break
+      }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/028">
+    var n = Number(prompt())
+
+    while (n > 0) {
+      var digit = n % 10
+      console.log(digit)
+      n = (n - digit) / 10
+    }
+  </script>
+
+  <script type="sss" id="ch0105/029">
+
+  </script>
+  <script type="sss" id="ch0105/030">
+    var m = Number(prompt())
+    var k = Number(prompt())
+    var c = 0 
+
+    if (m % 19 == 0) {
+      while (m > 0) {
+        var digit = m % 10
+        if (digit == 3) {
+          c++
+        }
+        m = (m - digit) / 10
+      }
+    } 
+
+    if ( c == k) {
+      console.log('YES')
+    } else {
+      console.log('NO')
+    }
+  </script>
+
+  <script type="sss" id="ch0105/031">
+    var N = Number(prompt())
+    var M = Number(prompt())
+
+    for (var i = 1; i <= N; i++) {
+       // i为灯的编号
+       var light = true 
+       // 灯一开始是开的
+       for (var j = 1; j <= M; j++) {
+         // j为人的编号
+         if (i % j == 0) {
+           // 灯编号是人编号的倍数时，要切换灯的状态
+           light = !light
+         }
+       }
+       if (light == false) {
+         console.log(i)
+       }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/032">
+    var n = Number(prompt())
+    var a = 1
+    var b = 1
+    var c = 0
+    var sum = 0
+
+    for (var i = 0; i < n; i++) {
+      c = (a + b) / b
+      a = b 
+      b = a + b
+      sum += c
+    }
+
+    console.log(sum.toFixed(4))
+  </script>
+
+  <script type="sss" id="ch0105/033">
+    var n = Number(prompt())
+    var sum = 0
+    var one = 1
+    
+    for (var i = 1; i <= n; i++) {
+      if (i % 2 == 0) {
+        one = -one
+      }
+      sum += one / i
+    }
+
+    console.log(sum)
+  </script>
+
+  <script type="sss" id="ch0105/034">
+    var n = Number(prompt())
+    var sum = 0
+
+    for (var i = 1; i <= n; i++) {
+     var result = 1
+     for (j = 2; j <= i; j++) {
+       result *= j
+     } 
+     sum += result
+    }
+
+    console.log(sum)
+  </script>
+
+  <script type="sss" id="ch0105/035">
+    var n = Number(prompt())
+    var sum = 0
+
+    for (var i = 0; i <= n; i++) {
+      var result = 1
+      for (j = 2; j <= i; j++) {
+        result *= j
+      }
+      sum += 1 / result
+    }
+
+    console.log(sum.toFixed(10))
+  </script>
+
+  <script type="sss" id="ch0105/036">
+    var x = Number(prompt())
+    var n = Number(prompt())
+    var sum = 0
+
+    for (var i = n; i >= 0; i--) {
+      var result = 1
+      for (var j = 0; j < i; j++) {
+        result *= x
+      }
+      sum += result
+    }
+
+    console.log(sum.toFixed(2))
+
+    var x = Number(prompt())
+    var n = Number(prompt())
+    var sum = 0
+    var exponent = 1
+
+    for (var i = 0; i <= n; i++) {
+      sum += exponent
+      expoent *= x
+    }
+
+    console.log(sum.toFixed(2))
+</script>
+
+  <script type="sss" id="ch0105/037">
+
+  </script>
+
+  <script type="sss" id="ch0105/038">
+    var m = Number(prompt())
+
+    for (var i = 0; i < m; i++) {
+      var n = Number(prompt()) // 最高次数
+
+      if ( n == 0) {
+        var c = Number(prompt()) // 常数
+        console.log(0)
+      } else {
+        for ( var j = n; j >= 0; j--) {
+          var c = Number(prompt())
+          if (j) {
+            console.log(c * j)
+          }
+        }
+      }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/039">
+    var n = Number(prompt())
+    var sum = 0 
+    var flag = true
+
+    for (var i = 1; i <= n; i++) {
+      if (i % 7) {
+        flag = false
+        var m = i 
+        while (m > 0) {
+          var digit = m % 10
+          if (digit == 7) {
+            flag = true
+            break
+          }
+          m = (m - digit) / 10
+        }
+       if (flag == false) {
+         sum += i * i
+       }
+      }
+    }
+
+    console.log(sum)
+  </script>
+
+  <script type="sss" id="ch0105/040">
+    var n = Number(prompt())
+    var c = 0
+
+    for (var i = 1; i <= n; i++) {
+      var m = i
+      while (m > 0) {
+        var digit = m % 10
+        if (digit == 1) {
+          c++
+        }
+        m = (m - digit) / 10
+      }
+    }
+
+    console.log(c)
+  </script>
+
+  <script type="sss" id="ch0105/041">
+    var L = Number(prompt())
+    var R = Number(prompt())
+    var c = 0
+
+    for (var i = L; i <= R; i++) {
+      var m = i
+      while (m > 0) {
+        var d = m % 10
+        if (d == 2) {
+          c++
+        }
+        m = (m - d) / 10
+      }
+    }
+
+    console.log(c)
+  </script>
+
+  <script type="sss" id="ch0105/042">
+    var h = Number(prompt())
+    var w = Number(prompt())
+    var char = prompt()
+    var fill = Number(prompt())
+
+    var a = char
+    var b = char
+
+    for ( var i = 0; i < w - 2; i++) {
+      a += char
+      if (fill) {
+        b += char
+      } else {
+        b += ' '
+      }
+    }
+
+    a += char
+    b += char
+
+    var result = a + '\n'
+
+    for (var i = 0; i < h - 2; i++) {
+      result += b + '\n'
+    }
+
+    result += a
+
+    console.log(result)
+  </script>
+
+  <script type="sss" id="ch0105/043">
+    var n = Number(prompt())
+    var maxFactor = 1
+
+    for (var i = 2; n > 1; i++) {
+      if (n % i == 0) {
+        maxFactor = i
+        n = n / i
+        i--
+      }
+    }
+
+    console.log(i)
+  </script>
+
+  <script type="sss" id="ch0105/044">
+    var n = Number(prompt())
+    var c = 0
+    var isPrime 
+
+    for (var i = 2; ; i++) {
+      isPrime = true
+      for (var j = 2; j < i; j++) {
+        if (i % j == 0) {
+          isPrime = false
+          break
+        }
+      }
+      if (isPrime) {
+        c++
+        if (c === n) {
+          console.log(i)
+          break
+        }
+      }
+    }
+  </script>
+
+  <script type="sss" id="ch0105/045">
+    var d = Number(prompt())
+    var sum = 0
+    var coin = 1
+    var day = 0
+    var count = 1
+
+    for (var i = 1; i <= d; i++) {
+      sum += coin
+      day++
+      if (day == count) {
+        coin++
+        count++
+        day = 0 
+      }
+    }
+
+    console.log(sum)
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
